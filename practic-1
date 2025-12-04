@@ -1,0 +1,56 @@
+using namespace std;
+#include <iostream>
+int main()
+{
+    setlocale(0, "");
+    int a1 = 104;
+    cout << a1 << " тип: int, размер : 4 б." << endl;
+    int a2 = 64;
+    cout << a2 << " тип: int, размер : 4 б." << endl;
+    int a3 = 124;
+    cout << a3 << " тип: int, размер : 4 б." << endl;
+    int a4 = 14;
+    cout << a4 << " тип: int, размер : 4 б." << endl;
+    int a5 = 1;
+    cout << a5 << " тип: int, размер : 4 б." << endl;
+
+    char b1 = 'g';
+    cout << b1 << " тип: char, размер : 1 б." << endl;
+    char b2 = 'h';
+    cout << b2 << " тип: char, размер : 1 б." << endl;
+    char b3 = 'd';
+    cout << b3 << " тип: char, размер : 1 б." << endl;
+    char b4 = 'c';
+    cout << b4 << " тип: char, размер : 1 б." << endl;
+    char b5 = 'o';
+    cout << b5 << " тип: char, размер : 1 б." << endl;
+
+    float c1 = 3.14;
+    cout << c1 << " тип: float, размер : 4 б." << endl;
+    float c2 = 3.664;
+    cout << c2 << " тип: float, размер : 4 б." << endl;
+    float c3 = 33.14;
+    cout << c3 << " тип: float, размер : 4 б." << endl;
+    float c4 = 37.14;
+    cout << c4 << " тип: float, размер : 4 б." << endl;
+    float c5 = 13.74;
+    cout << c5 << " тип: float, размер : 4 б." << endl;
+
+    string g1 = "hello world";
+    cout << g1 << " тип: string, размер : динамический." << endl;
+    string g2 = "good night";
+    cout << g2 << " тип: string, размер : динамический." << endl;
+    string g3 = "ананас";
+    cout << g3 << " тип: string, размер : динамический." << endl;
+    string g4 = "огурец";
+    cout << g4 << " тип: string, размер : динамический." << endl;
+    string g5 = "пока";
+    cout << g5 << " тип: string, размер : динамический." << endl;
+
+    bool f1 = false;
+    cout << f1 << " тип: bool, размер : 1 б." << endl;
+    bool f2 = true;
+    cout << f2 << " тип: bool, размер : 1 б." << endl;
+
+    return 0;
+}
