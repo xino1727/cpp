@@ -1,0 +1,28 @@
+using namespace std;
+#include <iostream>
+int main() {
+	std::cout << "osen 1" << endl;
+	std::cout << "zima 2" << endl;
+	std::cout << "vesna 3" << endl;
+	std::cout << "leto 4" << endl;
+	int a;
+	cin >> a;
+	if (a == 1) {
+		std::cout << "osen 1" << endl;
+		}
+	else if (a == 2) {
+		cout << "zima 2" << endl;
+	}
+	else if (a == 3) {
+		cout << "vesna 3" << endl;
+	}
+	else if (a == 4) {
+		cout << "leto 4" << endl;
+	}
+	else {
+		cout << "net takogo" << endl;
+	}
+
+
+
+}
