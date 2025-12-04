@@ -1,0 +1,143 @@
+
+using namespace std;
+#include <iostream>
+int main() {
+	setlocale(0, "");
+	cout << "1 русские слова" << endl;
+	cout << "2 английские слова" << endl;
+	int a;
+	cin >> a;
+	int b;
+	int c;
+	if (a == 1) {
+		cout<< "1 дом" <<endl;
+		cout<< "2 дорога" << endl;
+		cout<< "3 человек" << endl;
+		cout<< "4 мяч" << endl;
+		cout<< "5 дверь" << endl;
+		cout<< "6 крыша" << endl;
+		cout<< "7 земля" << endl;
+		cout << "8 жизнь" << endl;
+		cout << "9 смерть" << endl;
+		cout<< "10 рука" << endl;
+		cout<< "11 нога" << endl;
+		cout<< "12 ручка" << endl;
+		cout<< "13 стол" << endl;
+		cout << "14 стул" << endl;
+		cout << "15 медведь" << endl;
+		cin >> c;
+		switch (c) {
+			case 1:
+				cout << "house";
+				break;
+			case 2:
+				cout << "road";
+				break;
+			case 3:
+				cout << "person";
+				break;
+			case 4:
+				cout << "ball";
+				break;
+			case 5:
+				cout << "door";
+				break;
+			case 6:
+				cout << "roof";
+				break;
+			case 7:
+				cout << "earth";
+				break;
+			case 8:
+				cout << "life";
+				break;
+			case 9:
+				cout << "death";
+				break;
+			case 10:
+				cout << "hand";
+				break;
+			case 11:
+				cout << "leg";
+				break;
+			case 12:
+				cout << "handle";
+				break;
+			case 13:
+				cout << "table";
+				break;
+			case 14:
+				cout << "chair";
+				break;
+			case 15:
+				cout << "bear";
+				break;
+			}
+	}
+	else if (a == 2) {
+		cout << "1 house" << endl;
+		cout << "2 road" << endl;
+		cout << "3 person" << endl;
+		cout << "4 ball" << endl;
+		cout << "5 door" << endl;
+		cout << "6 roof" << endl;
+		cout << "7 earth" << endl;
+		cout << "8 life" << endl;
+		cout << "9 death" << endl;
+		cout << "10 hand" << endl;
+		cout << "11 leg" << endl;
+		cout << "12 handle" << endl;
+		cout << "13 table" << endl;
+		cout << "14 chair" << endl;
+		cout << "15 bear" << endl;
+		cin >> c;
+		switch (c) {
+		case 1:
+			cout << "дом";
+			break;
+		case 2:
+			cout << "дорога";
+			break;
+		case 3:
+			cout << "человек";
+			break;
+		case 4:
+			cout << "мяч";
+			break;
+		case 5:
+			cout << "деврь";
+			break;
+		case 6:
+			cout << "крыша";
+			break;
+		case 7:
+			cout << "земля";
+			break;
+		case 8:
+			cout << "жизнь";
+			break;
+		case 9:
+			cout << "смерь";
+			break;
+		case 10:
+			cout << "рука";
+			break;
+		case 11:
+			cout << "нога";
+			break;
+		case 12:
+			cout << "ручка";
+			break;
+		case 13:
+			cout << "стол";
+			break;
+		case 14:
+			cout << "стул";
+			break;
+		case 15:
+			cout << "медведь";
+			break;
+		}
+	}
+	return 0;
+}
