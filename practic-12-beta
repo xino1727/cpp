@@ -1,0 +1,66 @@
+#include <iostream>
+#include <cstdlib>  
+using namespace std;
+int main() {
+	setlocale(0, "");
+	int vibr1 = 0;
+	int dlvihoda;
+	int score = 0;
+	int colvopr;
+	int color;
+	int lifes = 3;
+	string name = "name";
+
+	string vopros1 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
+	string vopros2 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
+	string vopros3 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
+	string vopros4 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
+	string vopros5 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
+	string vopros6 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
+	string vopros7 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
+	string vopros8 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
+	string vopros9 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
+	string vopros10 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
+	string vopros11 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
+	string vopros12 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
+
+	string vopros1 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
+	string vopros1 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
+	while (vibr1 != 4) {
+		cout << "1 начать игру\n2 настройки\n3 правила\n4 выйти";
+		cin >> vibr1;
+		if (vibr1 == 3) {
+			cout << "Игрок получает очки за правильный ответ на вопрос\nИгрок проходит дальше за правильный ответ\nИгрок теряет жизнь при неправильном ответе\n";
+			cout << "введите любое число для выхода в меню\n";
+			cin >> dlvihoda;
+		}
+		else if (vibr1 == 2) {
+			cout << "введите имя\n";
+			cin >> name;
+			cout << "введите количество вопросов 8 10 или 12\n";
+			cin >> colvopr;
+			cout << "введите цвет интерфейса\n" << "1 не менять\n" << "2 red\n" << "3 green\n";
+			cin >> color;
+			cout << "введите любое число для выхода в меню\n";
+			cin >> dlvihoda;
+		}
+		else if (vibr1 == 1) {
+			break;
+		}
+	}
+	while (lifes != 0 and colvopr !=0) {
+		cout << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
+		cout << vopros1;
+		cin >> vibr1;
+		if (vibr1 == 1) {
+			score++;
+			colvopr--;
+		}
+		else {
+			lifes--;
+			colvopr--;
+		}
+		cout << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
+		
+	}
+}
