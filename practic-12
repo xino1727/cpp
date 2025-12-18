@@ -2,10 +2,7 @@
 #include <cstdlib>  
 #include <windows.h> 
 
-void setColor(int textColor, int bgColor = 0) {
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hConsole, (bgColor << 4) | textColor);
-}
+
 using namespace std;
 int main() {
 	setlocale(0, "");
@@ -13,10 +10,15 @@ int main() {
 	int dlvihoda;
 	int score = 0;
 	int colvopr = 0;
-	int color;
+	string color_green = "\x1b[92m";
+	string color_red = "\x1b[91m";
+	string color_blue = "\x1b[94m";
+	string color_yellow = "\x1b[93m";
+	string color_def = "\x1b[0m";
 	int lifes = 3;
+	int color = 0;
 	string name = "name";
-
+	string current_color = color_def;
 	string vopros1 = "системный язык програмирования?\n1 cpp\n2 python\n3 ruby\n4 c#\n";
 	string vopros2 = "Что такое переменная?\n1 Часть кода, которая повторяется много раз\n2	Контейнер для хранения данных, значение которого можно менять\n3 Тип данных для целых чисел\n4 Ошибка в программе\n";
 	string vopros3 = "Какой оператор используется в большинстве языков для присваивания значения переменной?\n1 ==\n2 =\n3 !=\n4 :=\n";
@@ -31,37 +33,54 @@ int main() {
 	string vopros12 = "Что такое «синтаксическая ошибка» (syntax error)?\n1 Ошибка в логике программы, из-за которой она работает не так, как задумано\n2 Ошибка, возникающая при попытке выполнить операцию с неподходящим типом данных\n3 Ошибка в написании команд языка, из-за которой программа не может быть запущена\n4 Ошибка, возникающая при делении на ноль\n";
 
 	while (vibr1 != 4) {
-		cout << "1 начать игру\n2 настройки\n3 правила\n4 выйти";
+		cout << current_color << "Меню" << color_def << endl << endl;
+		cout << current_color << "[1]Начать игру" << color_def << endl;
+		cout << current_color << "[2]Настройки" << color_def << endl;
+		cout << current_color <<  "[3]Правила" << color_def << endl;
+		cout << current_color <<  "[4]Выйти" << color_def << endl;
 		cin >> vibr1;
 		if (vibr1 == 3) {
-			cout << "Игрок получает очки за правильный ответ на вопрос\nИгрок проходит дальше за правильный ответ\nИгрок теряет жизнь при неправильном ответе\n";
-			cout << "введите любое число для выхода в меню\n";
+			cout << current_color << "Игрок получает очки за правильный ответ на вопрос\nИгрок проходит дальше за правильный ответ\nИгрок теряет жизнь при неправильном ответе\n";
+			cout << current_color << "введите любое число для выхода в меню\n";
 			cin >> dlvihoda;
 		}
 		else if (vibr1 == 2) {
-			cout << "введите имя\n";
+			cout << current_color << "введите имя\n";
 			cin >> name;
-			cout << "введите количество вопросов 8 10 или 12\n";
+			cout << current_color << "введите количество вопросов 8 10 или 12\n";
 			cin >> colvopr;
-			cout << "введите цвет интерфейса\n" << "1 не менять\n" << "2 red\n" << "3 green\n";
+			cout << current_color << "\n" << current_color << "Выберите цвет интерфейса:" << color_def << endl;
+			cout << current_color << color_def << "[1] Стандартный (белый)" << color_def << endl;
+			cout << current_color << color_red << "[2] Красный" << color_def << endl;
+			cout << current_color << color_green << "[3] Зеленый" << color_def << endl;
+			cout << current_color << color_blue << "[4] Синий" << color_def << endl;
+			cout << current_color << color_yellow << "[5] Желтый" << color_def << endl;
+			cout << current_color << "Ваш выбор: ";
 			cin >> color;
-			cout << "введите любое число для выхода в меню\n";
+			cout << current_color << "введите любое число для выхода в меню\n";
 			cin >> dlvihoda;
 		}
+
 		else if (vibr1 == 1) {
 			break;
 		}
 	}
-	if (color == 2) {
-		setColor(12);
+	if (color == 1) {
+		current_color = color_def;
+	}
+	else if (color == 2) {
+		current_color = color_red;
 	}
 	else if (color == 3) {
-		setColor(10);
+		current_color = color_blue;
+	}
+	else if (color == 4) {
+		current_color = color_yellow;
 	}
 	while (lifes > 0 && colvopr > 0) {
 
-		cout << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
-		cout << vopros1;
+		cout << current_color << current_color << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
+		cout << current_color << vopros1;
 		cin >> vibr1;
 		if (vibr1 == 1) {
 			score++;
@@ -72,16 +91,16 @@ int main() {
 			colvopr--;
 		}
 		if (lifes <= 0) {
-			cout << "ты проиграл\n";
+			cout << current_color << "ты проиграл\n";
 			break;
 		}
 
 		if (colvopr <= 0) {
-			cout << "ты победил\n";
+			cout << current_color << "ты победил\n";
 			break;
 		}
-		cout << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
-		cout << vopros2;
+		cout << current_color << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
+		cout << current_color << vopros2;
 		cin >> vibr1;
 		if (vibr1 == 2) {
 			score++;
@@ -92,16 +111,16 @@ int main() {
 			colvopr--;
 		}
 		if (lifes <= 0) {
-			cout << "ты проиграл\n";
+			cout << current_color << "ты проиграл\n";
 			break;
 		}
 
 		if (colvopr <= 0) {
-			cout << "ты победил\n";
+			cout << current_color << "ты победил\n";
 			break;
 		}
-		cout << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
-		cout << vopros3;
+		cout << current_color << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
+		cout << current_color << vopros3;
 		cin >> vibr1;
 		if (vibr1 == 2) {
 			score++;
@@ -112,16 +131,16 @@ int main() {
 			colvopr--;
 		}
 		if (lifes <= 0) {
-			cout << "ты проиграл\n";
+			cout << current_color << "ты проиграл\n";
 			break;
 		}
 
 		if (colvopr <= 0) {
-			cout << "ты победил\n";
+			cout << current_color << "ты победил\n";
 			break;
 		}
-		cout << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
-		cout << vopros4;
+		cout << current_color << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
+		cout << current_color << vopros4;
 		cin >> vibr1;
 		if (vibr1 == 4) {
 			score++;
@@ -132,15 +151,15 @@ int main() {
 			colvopr--;
 		}
 		if (lifes <= 0) {
-			cout << "ты проиграл\n";
+			cout << current_color << "ты проиграл\n";
 			break;
 		}
 
 		if (colvopr <= 0) {
-			cout << "ты победил\n";
+			cout << current_color << "ты победил\n";
 			break;
 		}
-		cout << vopros5;
+		cout << current_color << vopros5;
 		cin >> vibr1;
 		if (vibr1 == 2) {
 			score++;
@@ -151,16 +170,16 @@ int main() {
 			colvopr--;
 		}
 		if (lifes <= 0) {
-			cout << "ты проиграл\n";
+			cout << current_color << "ты проиграл\n";
 			break;
 		}
 
 		if (colvopr <= 0) {
-			cout << "ты победил\n";
+			cout << current_color << "ты победил\n";
 			break;
 		}
-		cout << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
-		cout << vopros6;
+		cout << current_color << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
+		cout << current_color << vopros6;
 		cin >> vibr1;
 		if (vibr1 == 2) {
 			score++;
@@ -171,16 +190,16 @@ int main() {
 			colvopr--;
 		}
 		if (lifes <= 0) {
-			cout << "ты проиграл\n";
+			cout << current_color << "ты проиграл\n";
 			break;
 		}
 
 		if (colvopr <= 0) {
-			cout << "ты победил\n";
+			cout << current_color << "ты победил\n";
 			break;
 		}
-		cout << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
-		cout << vopros7;
+		cout << current_color << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
+		cout << current_color << vopros7;
 		cin >> vibr1;
 		if (vibr1 == 3) {
 			score++;
@@ -191,16 +210,16 @@ int main() {
 			colvopr--;
 		}
 		if (lifes <= 0) {
-			cout << "ты проиграл\n";
+			cout << current_color << "ты проиграл\n";
 			break;
 		}
 
 		if (colvopr <= 0) {
-			cout << "ты победил\n";
+			cout << current_color << "ты победил\n";
 			break;
 		}
-		cout << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
-		cout << vopros8;
+		cout << current_color << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
+		cout << current_color << vopros8;
 		cin >> vibr1;
 		if (vibr1 == 2) {
 			score++;
@@ -211,16 +230,16 @@ int main() {
 			colvopr--;
 		}
 		if (lifes <= 0) {
-			cout << "ты проиграл\n";
+			cout << current_color << "ты проиграл\n";
 			break;
 		}
 
 		if (colvopr <= 0) {
-			cout << "ты победил\n";
+			cout << current_color << "ты победил\n";
 			break;
 		}
-		cout << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
-		cout << vopros9;
+		cout << current_color << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
+		cout << current_color << vopros9;
 		cin >> vibr1;
 		if (vibr1 == 3) {
 			score++;
@@ -231,16 +250,16 @@ int main() {
 			colvopr--;
 		}
 		if (lifes <= 0) {
-			cout << "ты проиграл\n";
+			cout << current_color << "ты проиграл\n";
 			break;
 		}
 
 		if (colvopr <= 0) {
-			cout << "ты победил\n";
+			cout << current_color << "ты победил\n";
 			break;
 		}
-		cout << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
-		cout << vopros10;
+		cout << current_color << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
+		cout << current_color << vopros10;
 		cin >> vibr1;
 		if (vibr1 == 1) {
 			score++;
@@ -251,16 +270,16 @@ int main() {
 			colvopr--;
 		}
 		if (lifes <= 0) {
-			cout << "ты проиграл\n";
+			cout << current_color << "ты проиграл\n";
 			break;
 		}
 
 		if (colvopr <= 0) {
-			cout << "ты победил\n";
+			cout << current_color << "ты победил\n";
 			break;
 		}
-		cout << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
-		cout << vopros11;
+		cout << current_color << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
+		cout << current_color << vopros11;
 		cin >> vibr1;
 		if (vibr1 == 3) {
 			score++;
@@ -271,16 +290,16 @@ int main() {
 			colvopr--;
 		}
 		if (lifes <= 0) {
-			cout << "ты проиграл\n";
+			cout << current_color << "ты проиграл\n";
 			break;
 		}
 
 		if (colvopr <= 0) {
-			cout << "ты победил\n";
+			cout << current_color << "ты победил\n";
 			break;
 		}
-		cout << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
-		cout << vopros12;
+		cout << current_color << name << " | " << "жизни: " << lifes << " | " << "score: " << score << endl;
+		cout << current_color << vopros12;
 		cin >> vibr1;
 		if (vibr1 == 3) {
 			score++;
@@ -291,15 +310,16 @@ int main() {
 			colvopr--;
 		}
 		if (lifes <= 0) {
-			cout << "ты проиграл\n";
+			cout << current_color << "ты проиграл\n";
 			break;
 		}
 
 		if (colvopr <= 0) {
-			cout << "ты победил\n";
+			cout << current_color << "ты победил\n";
 			break;
 		}
 
 	}
 
+}
 }
