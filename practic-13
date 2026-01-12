@@ -1,0 +1,57 @@
+#include <conio.h>
+#include <iostream>
+using namespace std;
+
+int main()
+{  
+    
+    setlocale(0, "");
+    char choise;
+    int size;
+    char figr;
+    char bebr2;
+    char textr;
+    cout << "[ + ] Программа - “Геометрические фигуры”" << endl;
+    cout << "[ 1 ] Линия" << endl;
+    cout << "[ 2 ] Квадрат" << endl;
+    cout << "[ + ] Выберите фигуру: " << endl;
+    figr = _getch();
+    if (figr == '2') {
+        cout << "[ + ] Фигура: квадрат" << endl;
+        cout << "[ 1 ] Заполненный" << endl;
+        cout << "[ 2 ] Пустой" << endl;
+        choise = _getch();
+    }
+    else if (figr == '1') {
+        cout << "[ + ] Фигура: линия" << endl;
+    }
+    cout << "[ + ] Размер: " << endl;
+    cin >> size;
+    cout << "[ + ] Текстура: " << endl;
+    textr= _getch();
+    if (figr == '2' and choise == '1')
+        for (int i = 0; i < size; i++) {
+            for (int a = 0; a < size; a++) {
+                cout << textr << " ";
+            }
+            cout << endl;
+        }
+    else if (figr == '2' and choise == '2') {
+        for (int i = 0; i < size; i++) {
+            for (int a = 0; a < size; a++) {
+                if (i == 0 or i == size - 1 or a==0 or a==size-1)
+                cout << textr << " ";
+                else {
+                    cout << "  ";
+                }
+            }
+            cout << endl;
+        }
+    }
+    else if (figr == '1') {
+        for (int i = 0; i < size; i++) {
+            cout << textr;
+        }
+    }
+    return 0;
+}
