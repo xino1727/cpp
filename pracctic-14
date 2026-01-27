@@ -1,4 +1,3 @@
-#include <conio.h>
 #include <iostream>
 using namespace std;
 
@@ -6,11 +5,11 @@ int main()
 {
 
     setlocale(0, "");
-    char choise;
+    int choise;
     int size;
     int vis;
     int sir;
-    char figr;
+    int figr;
     char bebr2;
     char textr;
     cout << "[ + ] Программа - “Геометрические фигуры”" << endl;
@@ -18,39 +17,39 @@ int main()
     cout << "[ 2 ] Квадрат" << endl;
     cout << "[ 3 ] Прямоугольник" << endl;
     cout << "[ + ] Выберите фигуру: " << endl;
-    figr = _getch();
-    if (figr == '2') {
+    cin >> figr;
+    if (figr == 2) {
         cout << "[ + ] Фигура: квадрат" << endl;
         cout << "[ 1 ] Заполненный" << endl;
         cout << "[ 2 ] Пустой" << endl;
-        choise = _getch();
+        cin >> choise;
         cout << "[ + ] Размер: " << endl;
         cin >> size;
         cout << "[ + ] Текстура: " << endl;
-        textr = _getch();
+        cin >> textr;
     }
-    else if (figr == '1') {
+    else if (figr == 1) {
         cout << "[ + ] Фигура: линия" << endl;
         cout << "[ + ] Размер: " << endl;
         cin >> size;
         cout << "[ + ] Текстура: " << endl;
-        textr = _getch();
+        cin >> textr;
     }
-    else if (figr == '3') {
+    else if (figr == 3) {
         cout << "[ + ] Фигура: прямоугольник" << endl;
         cout << "[ 1 ] Заполненный" << endl;
         cout << "[ 2 ] Пустой" << endl;
-        choise = _getch();
+        cin >> choise;
         cout << "[ + ] ширина: " << endl;
         cin >> sir;
         cout << "[ + ] высота" << endl;
         cin >> vis;
         cout << "[ + ] текстура" << endl;
-        textr = _getch();
+        cin >> textr;
 
     }
 
-    if (figr == '2' and choise == '1')
+    if (figr == '2' and choise == 1)
         for (int i = 0; i < size; i++) {
             for (int a = 0; a < size; a++) {
                 cout << textr << " ";
@@ -69,19 +68,19 @@ int main()
             cout << endl;
         }
     }
-    else if (figr == '1') {
+    else if (figr == 1) {
         for (int i = 0; i < size; i++) {
             cout << textr;
         }
     }
-    else if (figr == '3' and choise == '1')
+    else if (figr == 3 and choise == 1)
         for (int i = 0; i < vis; i++) {
             for (int a = 0; a < sir; a++) {
                 cout << textr << " ";
             }
             cout << endl;
         }
-    else if (figr == '3' and choise == '2') {
+    else if (figr == 3 and choise == 2) {
         for (int i = 0; i < vis; i++) {
             for (int a = 0; a < sir; a++) {
                 if (i == 0 or i == vis - 1 or a == 0 or a == sir - 1)
