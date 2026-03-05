@@ -1,0 +1,90 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+
+	const int N = 10;
+	int arrInt[N] = { 1, 20, 32, 4, 1, 2, 2, 54, 23, 0 };
+
+	cout << "[+] Массив INT: \n";
+	for (int i = 0; i < N; i++) {
+		cout << "[ + ] arrInt [" << i << "] | значение: " << arrInt[i] << endl;
+	}
+
+	string arrString[N] = { "Куки", "Корги",  "Камаров",  "Донбас",  "Самолет",  "Гадзилла",  "ДОТА",  "Валенок",  "Геркулесовая каша",  "Диджей назар"};
+
+	cout << endl << "[+] Массив STRING: \n";
+	for (int i = 0; i < N; i++) {
+		cout << "[ + ] arrString [" << i << "] | значение: " << arrString[i] << endl;
+	}
+
+	short arrShort[N] = { 1, 67, 32, 14, 88, 42, 52, 54, 23, 0 };
+
+	cout << endl << "[+] Массив SHORT: \n";
+	for (int i = 0; i < N; i++) {
+		cout << "[ + ] arrShort [" << i << "] | значение: " << arrShort[i] << endl;
+	}
+
+	bool arrBool[N] = { true, false, true, false, true, false, true, false, true, false };
+
+	cout << endl << "[+] Массив BOOL: \n";
+	for (int i = 0; i < N; i++) {
+		cout << "[ + ] arrBool [" << i << "] | значение: " << arrBool[i] << endl;
+	}
+
+	char arrChar[N] = { '5', '2',  '$',  '@',  '%',  'T', 'i',  'L',  'o',  'x', };
+
+	cout << endl << "[+] Массив CHAR: \n";
+	for (int i = 0; i < N; i++) {
+		cout << "[ + ] arrChar [" << i << "] | значение: " << arrChar[i] << endl;
+	}
+
+	double arrDouble[N] = { 1.4, 8.8, 5.2, 4.2, 6.9, 77.7, 6.7, 7.6, 22.8, 8.8};
+
+	cout << endl << "[+] Массив DOUBLE: \n";
+	for (int i = 0; i < N; i++) {
+		cout << "[ + ] arrDouble [" << i << "] | значение: " << arrDouble[i] << endl;
+	}
+
+	float arrFloat[N] = { 1.4, 8.8, 5.2, 4.2, 6.9, 77.7, 6.7, 7.6, 22.8, 8.8 };
+
+	cout << endl << "[+] Массив FLOAT: \n";
+	for (int i = 0; i < N; i++) {
+		cout << "[ + ] arrFloat [" << i << "] | значение: " << arrFloat[i] << endl;
+	}
+
+	long arrLong[N] = { 1, 67, 32, 14, 88, 42, 52, 54, 23, 0 };
+
+	cout << endl << "[+] Массив LONG: \n";
+	for (int i = 0; i < N; i++) {
+		cout << "[ + ] arrLong [" << i << "] | значение: " << arrLong[i] << endl;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
